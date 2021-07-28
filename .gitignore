@@ -1,5 +1,7 @@
 manage.py
 djangorestapscheduler/
 dist/
-MANIFEST
+MANIFEST.in
 db.sqlite3
+testing/
+rest_apscheduler.egg-info/

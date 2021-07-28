@@ -1,14 +1,14 @@
 from distutils.core import setup
 setup(
   name = 'rest_apscheduler',
-  packages = ['rest_apscheduler'],
-  version = '0.1',
+  packages = ['rest_apscheduler', 'rest_apscheduler/migrations'],
+  version = '0.1.3',
   license='MIT',
   description = 'You can use this package only for django and can schedule jobs using any database and maintain record.',
   author = 'Ronak Jain',
   author_email = 'jronak515@gmail.com',
   url = 'https://github.com/Ronakjain515/django-rest-apscheduler.git',
-  download_url = 'https://github.com/Ronakjain515/django-rest-apscheduler/archive/refs/tags/0.1.tar.gz',
+  download_url = 'https://github.com/Ronakjain515/django-rest-apscheduler/archive/refs/tags/0.1.2.tar.gz',
   keywords = ['django', 'rest', 'restframework', 'apscheduler', 'scheduler'],
   install_requires=[
           'apscheduler'

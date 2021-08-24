@@ -2,9 +2,11 @@ import logging
 import pickle
 from typing import Union, List
 
-from apscheduler import triggers
 from apscheduler import events
 from apscheduler.events import JobExecutionEvent
+from apscheduler.triggers.date import DateTrigger
+from apscheduler.triggers.interval import IntervalTrigger
+from apscheduler.triggers.cron import CronTrigger
 from apscheduler.job import Job as AppSchedulerJob
 from apscheduler.jobstores.base import BaseJobStore, JobLookupError, ConflictingIdError
 from apscheduler.jobstores.memory import MemoryJobStore
@@ -229,11 +231,11 @@ class DjangoJobStore(DjangoResultStoreMixin, BaseJobStore):
         with transaction.atomic():
             try:
                 trigger_type = ""
-                if type(job.trigger) == triggers.date.DateTrigger:
+                if type(job.trigger) == DateTrigger:
                     trigger_type = "DATE"
-                elif type(job.trigger) == triggers.interval.IntervalTrigger:
+                elif type(job.trigger) == IntervalTrigger:
                     trigger_type = "INTERVAL"
-                elif type(job.trigger) == triggers.cron.CronTrigger:
+                elif type(job.trigger) == CronTrigger:
                     trigger_type = "CRON"
                 return DjangoJob.objects.create(
                     id=job.id,

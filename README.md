@@ -22,7 +22,7 @@ Quick start
 ```python
 INSTALLED_APPS = (
     # ...
-    "django_apscheduler",
+    "rest_apscheduler",
 )
 ```
 

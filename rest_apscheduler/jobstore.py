@@ -1,7 +1,6 @@
 import logging
 import pickle
 from typing import Union, List
-
 from apscheduler import events
 from apscheduler.events import JobExecutionEvent
 from apscheduler.triggers.date import DateTrigger
